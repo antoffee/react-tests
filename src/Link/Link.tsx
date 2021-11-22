@@ -14,7 +14,7 @@ export const Link: React.FC<ILinkProps> = ({
   const [status, setStatus] = useState(STATUS.NORMAL);
 
   const onMouseEnter = () => {
-    setStatus(STATUS.NORMAL);
+    setStatus(STATUS.HOVERED);
   };
 
   const onMouseLeave = () => {
