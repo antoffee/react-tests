@@ -12,7 +12,8 @@
     "lint-fix": "eslint --fix \"src/**/*.+(js|jsx|ts|tsx|json)\"",
     "prettier": "prettier --write \"src/**/*.+(js|jsx|ts|tsx|json)\"",
     "stylelint": "stylelint 'src/**/*.css'",
-    "stylelint:fix": "stylelint 'src/**/*.css' --fix"
+    "stylelint:fix": "stylelint 'src/**/*.css' --fix",
+    "cypress": "cypress open"
   },
   "dependencies": {
     "@react-three/fiber": "^7.0.17",
@@ -34,6 +35,8 @@
   "devDependencies": {
     "@babel/preset-env": "^7.16.0",
     "@babel/preset-react": "^7.16.0",
+    "@cypress/react": "^5.12.0",
+    "@cypress/webpack-dev-server": "^1.8.0",
     "@types/jest": "^27.0.2",
     "@types/node": "^12.0.0",
     "@types/react": "^17.0.0",
@@ -44,6 +47,7 @@
     "@typescript-eslint/eslint-plugin": "^4.16.1",
     "@typescript-eslint/parser": "^4.16.1",
     "classnames": "^2.3.1",
+    "cypress": "^9.2.0",
     "eslint": "^7.21.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-eslint-comments": "^3.2.0",
