@@ -5,5 +5,6 @@ type CheckboxInputProps = FieldRenderProps<boolean>;
 
 export const CheckboxInput: React.FC<CheckboxInputProps> = ({
   input: { value, ...input },
-}: CheckboxInputProps) => <input {...input} type="checkbox" checked={!!value} />;
-
+}: CheckboxInputProps) => (
+  <input {...input} type="checkbox" checked={!!value} />
+);

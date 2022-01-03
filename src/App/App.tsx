@@ -1,5 +1,5 @@
 import React from "react";
-import { Field,Form } from "react-final-form";
+import { Field, Form } from "react-final-form";
 
 import { CheckboxInput } from "components/CheckboxInput";
 import { MultiCheckboxInput } from "components/MultyCheckboxInput";
@@ -10,12 +10,11 @@ import SelectInput from "components/SelectInput";
 import TextAreaInput from "components/TextAreaInput";
 import TextInput from "components/TextInput";
 
-
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 
 type Stooge = "larry" | "moe" | "curly";
 interface Values {
-  firstName?: string;
+  firstName: string;
   lastName?: string;
   employed: boolean;
   favoriteColor?: string;
@@ -43,9 +42,19 @@ export const App: React.FC = () => (
       Read Docs
     </a>
     <Form<Values>
+      validate={(values) => ({
+        firstName: values.firstName ? undefined : "Required",
+      })}
       onSubmit={onSubmit}
       initialValues={{ stooge: "larry", employed: false }}
-      render={({ handleSubmit, form, submitting, pristine, values }) => (
+      render={({
+        handleSubmit,
+        form,
+        submitting,
+        pristine,
+        values,
+        errors,
+      }) => (
         <form onSubmit={handleSubmit}>
           <div>
             <label>First Name</label>
@@ -177,12 +186,12 @@ export const App: React.FC = () => (
             <Field name="notes" component={TextAreaInput} placeholder="Notes" />
           </div>
           <div className="buttons">
-            <button type="submit" disabled={submitting || pristine}>
+            <button type="submit" disabled={submitting || pristine || !!errors?.firstName}>
               Submit
             </button>
             <button
               type="button"
-              onClick={()=>form.reset()}
+              onClick={() => form.reset()}
               disabled={submitting || pristine}
             >
               Reset
