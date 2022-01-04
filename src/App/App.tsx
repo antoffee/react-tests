@@ -1,5 +1,6 @@
 import React from "react";
 import { Field, Form } from "react-final-form";
+import { Button } from "Button";
 
 import { CheckboxInput } from "components/CheckboxInput";
 import { MultiCheckboxInput } from "components/MultyCheckboxInput";
@@ -186,16 +187,16 @@ export const App: React.FC = () => (
             <Field name="notes" component={TextAreaInput} placeholder="Notes" />
           </div>
           <div className="buttons">
-            <button type="submit" disabled={submitting || pristine || !!errors?.firstName}>
+            <Button type="submit" disabled={submitting || pristine || !!errors?.firstName}>
               Submit
-            </button>
-            <button
+            </Button>
+            <Button
               type="button"
               onClick={() => form.reset()}
               disabled={submitting || pristine}
             >
               Reset
-            </button>
+            </Button>
           </div>
           <pre>{JSON.stringify(values, undefined, 2)}</pre>
         </form>
