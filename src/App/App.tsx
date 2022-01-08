@@ -1,7 +1,7 @@
 import React from "react";
 import { Field, Form } from "react-final-form";
-import { Button } from "Button";
 
+import { Button } from "components/Button";
 import { CheckboxInput } from "components/CheckboxInput";
 import { MultiCheckboxInput } from "components/MultyCheckboxInput";
 import MultiSelectInput from "components/MultySelectInput";
@@ -63,6 +63,7 @@ export const App: React.FC = () => (
               name="firstName"
               component={TextInput}
               placeholder="First Name"
+              onFocus={(): void => ym(87038080, "reachGoal", "firstNameFocus")}
             />
           </div>
           <div>
@@ -187,7 +188,10 @@ export const App: React.FC = () => (
             <Field name="notes" component={TextAreaInput} placeholder="Notes" />
           </div>
           <div className="buttons">
-            <Button type="submit" disabled={submitting || pristine || !!errors?.firstName}>
+            <Button
+              type="submit"
+              disabled={submitting || pristine || !!errors?.firstName}
+            >
               Submit
             </Button>
             <Button
