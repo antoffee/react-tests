@@ -1,1 +1,1 @@
-declare const ym: (...args: unknown[]) => void;
+declare const ym: ((...args: unknown[]) => void) | undefined;
